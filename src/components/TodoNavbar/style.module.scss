@@ -1,0 +1,29 @@
+.headerWrapper {
+  .backgroundImage {
+    background-image: var(--background-image);
+    height: 15rem;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  .contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 21rem;
+    @include apply-at-lg-size {
+      width: 25rem;
+    }
+    margin: 4rem auto 0 auto;
+    font-size: 1.125rem; // 18px
+  }
+  .title {
+    font-size: 1.125rem; // 18px
+    font-weight: 700;
+    letter-spacing: 10px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    color: white;
+  }
+}

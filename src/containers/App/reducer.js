@@ -1,6 +1,6 @@
 import { produce } from 'immer';
 
-import { SET_LOCAL, SET_THEME, SET_POPUP, SET_LOADING, SET_DATA } from '@containers/App/constants';
+import { SET_LOCAL, SET_THEME, SET_POPUP, SET_LOADING, SET_DATA, SET_FILTER } from '@containers/App/constants';
 
 export const initialState = {
   locale: 'en',
@@ -10,11 +10,12 @@ export const initialState = {
     title: '',
     message: '',
   },
+  filter: 'All',
   data: [],
   loading: false,
 };
 
-export const storedKey = ['locale', 'theme'];
+export const storedKey = ['locale', 'theme', 'data'];
 
 const appReducer = (state = initialState, action) =>
   produce(state, (draft) => {
@@ -33,6 +34,9 @@ const appReducer = (state = initialState, action) =>
         break;
       case SET_DATA:
         draft.data = action.data;
+        break;
+      case SET_FILTER:
+        draft.filter = action.filter;
         break;
     }
   });

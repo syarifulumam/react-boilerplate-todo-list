@@ -1,4 +1,12 @@
-import { SET_LOCAL, SET_THEME, SET_POPUP, SET_LOADING, SET_DATA, GET_DATA } from '@containers/App/constants';
+import {
+  SET_LOCAL,
+  SET_THEME,
+  SET_POPUP,
+  SET_LOADING,
+  SET_DATA,
+  GET_DATA,
+  SET_FILTER,
+} from '@containers/App/constants';
 
 export const setLocale = (locale) => ({
   type: SET_LOCAL,
@@ -39,4 +47,9 @@ export const setData = (data) => ({
 
 export const getData = () => ({
   type: GET_DATA,
+});
+
+export const setFilter = (filter) => ({
+  type: SET_FILTER,
+  filter,
 });

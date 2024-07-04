@@ -1,0 +1,10 @@
+{
+  "message": "Success!",
+  "data": [
+    {
+      "id": 1,
+      "title": "Todo 1",
+      "is_completed": true
+    }
+  ]
+}

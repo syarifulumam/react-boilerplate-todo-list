@@ -1,0 +1,36 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding: 10px;
+  border-radius: 5px;
+  border-bottom: 1px solid #3f3f4b;
+  .todoItem {
+    display: flex;
+    font-size: 1.125rem; // 18px
+    align-items: center;
+    cursor: pointer;
+    .todoText {
+      text-decoration: line-through;
+      color: gray;
+    }
+    .Checkbox {
+      &:hover {
+        color: #a281fa;
+      }
+    }
+  }
+  .todoDelete {
+    color: gray;
+    display: flex;
+    @include apply-at-lg-size {
+      display: none;
+    }
+  }
+  &:hover {
+    .todoDelete {
+      display: flex;
+    }
+  }
+}

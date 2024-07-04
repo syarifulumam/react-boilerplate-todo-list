@@ -52,11 +52,13 @@ const Navbar = ({ title, locale, theme }) => {
   return (
     <div className={classes.headerWrapper} data-testid="navbar">
       <div className={classes.contentWrapper}>
+        {/* logo */}
         <div className={classes.logoImage} onClick={goHome}>
           <img src="/vite.svg" alt="logo" className={classes.logo} />
           <div className={classes.title}>{title}</div>
         </div>
         <Stack direction="row">
+          {/* toogle theme mode */}
           <IconButton onClick={handleTheme}>
             {theme === 'light' ? (
               <NightsStayIcon sx={iconStyle} />
@@ -64,10 +66,12 @@ const Navbar = ({ title, locale, theme }) => {
               <LightModeIcon sx={iconStyle} htmlColor="#fae6be" />
             )}
           </IconButton>
+          {/* button toogle language setting */}
           <IconButton onClick={handleClick}>
             <Avatar src={locale === 'id' ? '/id.png' : '/en.png'} sx={iconStyle} />
           </IconButton>
         </Stack>
+        {/* popup language setting menu */}
         <Menu open={open} anchorEl={menuPosition} onClose={handleClose}>
           <MenuItem onClick={() => onSelectLang('id')} selected={locale === 'id'}>
             <div className={classes.menu}>

@@ -17,7 +17,7 @@ const Home = ({ data }) => {
   }, [dispatch]);
 
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   }, [data]);
 
   return (

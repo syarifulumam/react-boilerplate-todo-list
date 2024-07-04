@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectData, selectFilter } from '@containers/App/selectors';
 import { setData, setFilter } from '@containers/App/actions';
-import { DndContext, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { DndContext, DragOverlay, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { SortableContext, arrayMove } from '@dnd-kit/sortable';
 import TodoItem from '@components/TodoItem/index';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
@@ -80,6 +80,11 @@ const Todo = () => {
                 />
               ))}
             </SortableContext>
+            <DragOverlay>
+              <div className={classes.dragOverlay}>
+                <div className={classes.dragText}>Drop here</div>
+              </div>
+            </DragOverlay>
           </DndContext>
           <div className={classes.todoFooter}>
             <span>{data.length} item left</span>

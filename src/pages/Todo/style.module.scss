@@ -10,6 +10,19 @@
   .todoWrapper {
     background-color: var(--color-background-2);
     border-radius: 5px;
+    .dragOverlay {
+      background-color: white;
+      opacity: 0.2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .dragText {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: grey;
+      }
+    }
     .todo {
       display: flex;
       justify-content: space-between;

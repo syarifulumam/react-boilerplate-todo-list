@@ -17,7 +17,7 @@ const TodoInput = ({ editTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (todo.title === undefined) return false;
+    if (todo.title === undefined || todo.title === '') return false;
     const getIndex = data.findIndex((item) => item.id === todo.id);
     if (getIndex === -1) {
       if (todo.is_completed === undefined) {

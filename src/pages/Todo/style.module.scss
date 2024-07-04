@@ -10,8 +10,21 @@
   .todoWrapper {
     background-color: var(--color-background-2);
     border-radius: 5px;
+    .todoList {
+      margin-top: 10px;
+      overflow-y: auto;
+      max-height: 400px;
+      &::-webkit-scrollbar {
+        background: black;
+        width: 8px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #8a4af3;
+      }
+    }
     .dragOverlay {
       background-color: white;
+      border: red solid 2px;
       opacity: 0.2;
       height: 100%;
       display: flex;

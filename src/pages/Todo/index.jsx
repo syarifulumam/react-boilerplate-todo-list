@@ -69,16 +69,18 @@ const Todo = () => {
         <div className={classes.todoWrapper}>
           <DndContext onDragEnd={handleDragEnd} sensors={sensors} modifiers={[restrictToVerticalAxis]}>
             <SortableContext items={todos}>
-              {todos.map((todo, index) => (
-                <TodoItem
-                  key={index}
-                  todo={todo}
-                  index={index}
-                  handleDelete={handleDelete}
-                  handleComplete={handleComplete}
-                  setEditTodo={setEditTodo}
-                />
-              ))}
+              <div className={classes.todoList} data-simplebar>
+                {todos.map((todo, index) => (
+                  <TodoItem
+                    key={index}
+                    todo={todo}
+                    index={index}
+                    handleDelete={handleDelete}
+                    handleComplete={handleComplete}
+                    setEditTodo={setEditTodo}
+                  />
+                ))}
+              </div>
             </SortableContext>
             <DragOverlay>
               <div className={classes.dragOverlay}>

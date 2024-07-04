@@ -44,13 +44,10 @@ const Todo = () => {
   const handleDragEnd = (e) => {
     const { active, over } = e;
     if (over && active.id !== over.id) {
-      setTodos((items) => {
-        const oldIndex = items.findIndex((item) => item.id === active.id);
-        const newIndex = items.findIndex((item) => item.id === over.id);
-        const newTodos = arrayMove(items, oldIndex, newIndex);
-        dispatch(setData(newTodos));
-        return newTodos;
-      });
+      const oldIndex = data.findIndex((item) => item.id === active.id);
+      const newIndex = data.findIndex((item) => item.id === over.id);
+      const newTodos = arrayMove(data, oldIndex, newIndex);
+      dispatch(setData(newTodos));
     }
   };
 

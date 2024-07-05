@@ -37,7 +37,7 @@ const Todo = () => {
   };
 
   const handleClearCompleted = () => {
-    dispatch(setData(data.map((todo) => (todo.is_completed ? { ...todo, is_completed: false } : todo))));
+    dispatch(setData(data.filter((todo) => !todo.is_completed)));
   };
 
   // DnD
@@ -67,7 +67,7 @@ const Todo = () => {
           <DndContext onDragEnd={handleDragEnd} sensors={sensors} modifiers={[restrictToVerticalAxis]}>
             <SortableContext items={todos}>
               <div className={classes.todoList} data-simplebar>
-                {todos.map((todo, index) => (
+                {todos.toReversed().map((todo, index) => (
                   <TodoItem
                     key={index}
                     todo={todo}

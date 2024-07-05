@@ -12,8 +12,11 @@
     border-radius: 5px;
     .todoList {
       margin-top: 10px;
-      overflow-y: auto;
+      overflow-y: hidden;
       max-height: 400px;
+      &:hover {
+        overflow-y: auto;
+      }
       &::-webkit-scrollbar {
         background: black;
         width: 8px;
